@@ -1,0 +1,96 @@
+1、 vue-cli 安装
+    1）测试是否有node 环境 并且 node 版本>=v 8.11.0
+
+       使用命令 node -v
+
+    2）为了让下载包的速度快 安装 cnpm
+       测试有没有：cnpm -v
+       有  ok
+       没有：http://npm.taobao.org
+
+     3）全局安装 vue-cli
+
+        cnpm install vue-cli --global 或者
+        cnpm install vue-cli -g
+        苹果电脑：sudo cnpm install vue-cli -g
+                输入密码：
+
+     4) 测试 vue-cli 是否安装成功
+        命令：vue -V 或 vue --version    可以查出他的版本  2.9.6
+
+
+
+
+2、通过 vue-cli 构建 vue 项目
+         命令vue init webpack 项目名
+         解释
+         vue                init        webpack             one
+        vue-cli的使用命令   初始化       前端自动化工具(模版)   项目名
+
+? Project name                      项目名         --- 回车
+? Project description               项目描述       --- 回车
+? Author                             作者           --- 回车
+? Vue build                         选择第一个      --- 回车   
+? Install vue-router?               vue 路由       y  /  --- 回车   
+? Use ESLint to lint your code?     代码风格检测    n  --- 回车
+? Set up unit tests No              测试            y  --- 回车
+? Setup e2e tests with Nightwatch?  测试            y   --- 回车
+? Should we run `npm install` for you after the project has been created? (recommended)
+ ❯ Yes, use NPM                      使用npm 去安装项目依赖
+  Yes, use Yarn                     使用 yarn 去安装项目依赖
+  No, I will handle that myself     使用自己的方式安装 （cnpm）
+
+  cd 项目名                          进入项目目录
+  npm install (or if using yarn: yarn)  安装命令 cnpm install
+  npm run dev                       运行命令
+  安装scss
+    cnpm install --save-dev sass-loader
+    cnpm install --save-dev node-sass
+  安装vuex
+    npm install --save vuex
+  安装axios
+    npm install axios
+
+    如果报错就输入 cnpm install   (缺失文件重新下载文件)
+————————————————————————————————————————————————————————————————————————————
+cli项目目录说明
+
+基本不动
+build          --构建   （打包构建的js） 
+config         --配置    （配置文件 端口/打包路径）
+node_modules   --node  模块 （下载的模插件/块）
+
+开发
+src            --项目目录  （操作的目录，写组件，功能，路由）
+      assets      --静态资源  （自己 图片 js css）    
+      components  --组件      
+      router      --路由
+      App.vue     --单文件组件 （可以删掉）
+      main.js     -- vue 入口文件
+
+static         --静态   （第三方静态资源layui）
+
+高级配置
+.babelrc       --babel的配置文件 （es6语法转为es5 的配置）
+.editorconfig  --编辑器 配置
+.gitignore     --git 过滤配置
+.postcssrc.js  --postcss 的配置 （css3 自动兼容）
+
+基本不动
+index.html     -- 主模版页面
+package.json   -- 项目配置文件（项目说明，项目的依赖）
+   webpack-dev-server 创建web 服务器 的 模块
+   
+   npm run 
+   dev   开发的时候测试
+   start 开发的时候测试
+   build 打包
+
+dependencies 项目依赖
+devDependencies 开发依赖
+   autoprefixer  css3 的属性自动做兼容
+   babel    es6--->es5
+   chalk    命令行字体颜色
+
+engines  引擎
+browserslist 浏览器支持情况
